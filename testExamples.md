@@ -1,7 +1,7 @@
 # Test case 1
 ## Create game command
 
-Given: No game instance.
+Given: No game instance..
 
 When: A create game command executed.
 
