@@ -2,7 +2,9 @@ node {
     checkout scm
     stage('Build') {
         sh 'npm install'
-        sh 'cd client && npm install && cd ..'
+        dir('client') {
+          sh 'npm install'
+        }
 
     }
     stage('Test') {
