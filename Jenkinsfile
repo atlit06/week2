@@ -1,10 +1,11 @@
 node {
     checkout scm
     stage('Build') {
-        sh 'yarn install'
+        sh 'npm install'
         dir('client') {
-          echo 'install yarn in client folder'
-          sh 'yarn install'
+          echo 'install npm in client folder'
+          sh 'npm install'
+          sh 'cd ..'
         }
 
     }
