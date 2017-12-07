@@ -6,7 +6,7 @@ node {
 
     }
     stage('Test') {
-        sh 'run testJenkins'
+        sh 'npm run testJenkins'
     }
     stage('Deploy') {
         echo 'Deploying....'
