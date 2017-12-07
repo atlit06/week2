@@ -2,13 +2,11 @@ node {
     checkout scm
     stage('Build') {
         sh 'npm install'
-        sh 'cd client'
-        sh 'npm install'
-        sh 'cd'
+        sh 'cd client && npm install && cd ..'
 
     }
     stage('Test') {
-        sh 'export NODE_PATH=. && ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./jasmine.json'
+        sh 'run testJenkins'
     }
     stage('Deploy') {
         echo 'Deploying....'
