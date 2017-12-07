@@ -1,10 +1,14 @@
 node {
     checkout scm
     stage('Build') {
-        echo 'Building..'
+        sh 'npm install'
+        sh 'cd client'
+        sh 'npm install'
+        sh 'cd'
+
     }
     stage('Test') {
-        echo 'Testing..'
+        sh 'export NODE_PATH=. && ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./jasmine.json'
     }
     stage('Deploy') {
         echo 'Deploying....'
