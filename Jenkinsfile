@@ -1,10 +1,7 @@
 node {
     checkout scm
     stage('Build') {
-        sh 'npm install'
-        dir('client') {
-          sh 'npm install'
-        }
+        sh 'yarn install'
 
     }
     stage('Test') {
