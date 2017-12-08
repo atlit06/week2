@@ -1,12 +1,16 @@
 node {
     checkout scm
     stage('Build') {
-        sh 'yarn install'
-        dir('client') {
-          sh 'yarn install'
-          sh 'cd ..'
+        stage('Install dependencies') {
+            sh 'yarn install'
+            dir('client') {
+              sh 'yarn install'
+              sh 'cd ..'
+            }
         }
-
+        stage('Dockerbuild') {
+          sh './dockerbuild.sh'
+        }
     }
     stage('Test') {
         sh 'npm run testJenkins'
