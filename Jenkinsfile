@@ -11,6 +11,10 @@ node {
     }
     stage('Test') {
         sh 'npm run testJenkins'
+        dir('client') {
+          sh 'npm run testAll'
+          sh 'cd ..'
+        }
     }
     stage('Deploy') {
         echo 'Deploying....'
