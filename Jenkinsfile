@@ -3,8 +3,7 @@ node {
     stage('Build') {
         sh 'yarn install'
         dir('client') {
-          echo 'install npm in client folder'
-          sh 'npm install'
+          sh 'yarn install'
           sh 'cd ..'
         }
 

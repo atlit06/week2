@@ -3,7 +3,7 @@
 
 if [ -z "$GIT_COMMIT" ];
 then
-    export GIT_COMMIT='40125dcaed526c7a5081de96db0b157d5c702a37'
+    export GIT_COMMIT=$(git rev-parse HEAD)
 fi
 
 
