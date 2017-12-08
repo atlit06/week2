@@ -17,5 +17,8 @@ node {
     }
     stage('Deploy') {
         echo 'Deploying....'
+        dir('provisioning') {
+          sh './provision-new-environment.sh'
+        }
     }
 }
