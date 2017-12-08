@@ -9,7 +9,7 @@ ssh -i \
 	      ec2-user@PUBLIC\_DNS\_NAME
 ```
 ### Update Java
-Then you have to update Java to Java 8
+Then you have to update Java to Java 8.
 
 ```
 sudo yum install java-1.8.0
